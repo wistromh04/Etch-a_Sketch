@@ -1,5 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Sedgwick Ave Display", serif;
+}
+
+.sedgwick-ave-display-regular {
+    font-family: "Sedgwick Ave Display", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 16px;
+
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff0f5;
+    height: 100vh;
+}
+
+.content {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
 .board {
     height: 500px;
     width: 500px;
     display: grid;
+    margin-bottom: 8px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 8px;
+}
+
+.button {
+    border-radius: 5px;
+    padding: 8px;
+    font-weight: bold;
+}
+
+.one {
+    background-color: black;
+    color: white;
+}
+
+
+.three {
+    background: hotpink;
+    color: white;
+}
+
+.four {
+    background: linear-gradient(to right,
+    violet, indigo, blue, green, yellow, orange, red);
+    color: white;
+}
+
+.five {
+    background: red;
+    color: black;
+}
+
+#sizer {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
 }

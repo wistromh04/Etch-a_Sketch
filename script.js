@@ -1,4 +1,5 @@
 let color = "black";
+let toggle = false;
 
 function setupBoard(size) {
     let board = document.querySelector(".board");
@@ -10,7 +11,7 @@ function setupBoard(size) {
     for (let i = 0; i < amount; i++) {
         let square = document.createElement("div");
         square.addEventListener("mouseover", colorSquare)
-        square.style.backgroundColor = "white";
+        square.style.backgroundColor = "lightgrey";
         board.insertAdjacentElement("beforeend", square)
     }
 }
@@ -26,14 +27,31 @@ function changeSize(input) {
 }
 
 function colorSquare(){
-    if (color === "random"){
-        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
 
-    }else {
-        this.style.backgroundColor = color;
+    if (toggle) {
+        if (color === "random") {
+            this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+
+        } else {
+            this.style.backgroundColor = color;
+        }
     }
 }
 
 function changeColor(choice){
 color = choice;
 }
+
+function resetBoard(){
+    let board = document.querySelector(".board");
+    let squares = board.querySelectorAll("div");
+    squares.forEach(square => {
+        square.removeEventListener("mouseover", colorSquare);
+    });
+    board.innerHTML = ''; //clears existing squares
+    setupBoard(16);
+}
+
+document.querySelector(".board").addEventListener(`click`, () =>{
+    toggle = !toggle;
+})

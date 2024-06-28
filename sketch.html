@@ -5,20 +5,26 @@
     <title>Etch-a-Sketch</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="flex-container">
-        <div class="title"><h1>SketchPad</h1></div>
+        <div class="title">
+            <h1>SketchPad</h1>
+            <p>Directions: Draw as you please! <br> Click to toggle draw mode: on/off</p>
+        </div>
         <div class="content">
             <div class="board"></div>
             <div class="buttons">
-                <button onclick="changeColor('black')">Black</button>
-                <button onclick="changeColor('grey')">Grey</button>
-                <button onclick="changeColor('white')">Eraser</button>
-                <button onclick="changeColor('random')">Random</button>
-                <button>Reset</button>
+                <button class="button one" onclick="changeColor('black')">Black</button>
+                <button class="button two" onclick="changeColor('grey')">Grey</button>
+                <button class="button three" onclick="changeColor('white')">Eraser</button>
+                <button class="button four" onclick="changeColor('random')">Random</button>
+                <button class="button five" onclick="resetBoard()">Reset</button>
             </div>
-            <div>
+            <div id="sizer">
                 <!-- The this.value will be whatever is put in the input  -->
                 <input
                         type="text"
